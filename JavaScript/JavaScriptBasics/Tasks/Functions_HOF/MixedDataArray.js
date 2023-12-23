@@ -7,3 +7,4 @@ const numbers = mixedArray.filter(item => typeof item === 'number');
 const squareOfNum = numbers.map(num => num*num);
 const sumOFSquareOfNum = squareOfNum.reduce((sum,num) => sum+num);
 console.log(sumOFSquareOfNum);
+
