@@ -9,54 +9,70 @@ function validateForm() {
     let countrySpan = document.getElementById('countrySpan');
     let zip = document.getElementById('zip').value;
     let zipSpan = document.getElementById('zipSpan');
+    var ck_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
     let emailid = document.getElementById('emailid').value;
     let emailidSpan = document.getElementById('emailidSpan');
-    let gender = document.getElementsByName('gender').checked ;
+    let gender = document.getElementsByName('gender').value;
     let genderSpan = document.getElementById('genderSpan');
-    // let language = document.getElementsById('language').checked ;
-    // let languageSpan = document.getElementById('languageSpan');
+    let checkboxes = document.getElementsByName('language');
+    let languageSpan = document.getElementById('languageSpan');
+
+    let isValid = ck_email.test(emailid);
+
+    let isChecked = false;  // check box set as not checked initially
+
+    if (!isValid) {
+        emailidSpan.innerHTML = "Required a valid email ID";
+    }
 
     if (userId === '') {
         nameSpan.innerHTML = "User ID cannot be empty";
-        // return false;
     }
 
-    if (password === '')  {
+    if (password === '') {
         passwordSpan.innerHTML = "Password required";
-        // return false;
-    } else if ( password.length < 8) {
+
+    } else if (password.length < 8) {
         passwordSpan.innerHTML = "Password must be atleast 8 characters";
     }
 
     if (username === '') {
         usernameSpan.innerHTML = 'Name cannot be empty';
-        // return false;
     }
 
     if (country === 'Select a Country') {
         countrySpan.innerHTML = 'You must select a country';
-        // return false;
     }
 
-    if(zip === '') {
+    if (zip === '') {
         zipSpan.innerHTML = "ZIP Code Required";
-        // return false;
     }
 
-    if (emailid === '' || typeof emailid !== "email") {
+    if (emailid === '') {
         emailidSpan.innerHTML = "Required a valid email ID";
-        // return false;
     }
 
-    if (!gender) {
+    if ((myForm.gender[0].checked == false) && (myForm.gender[1].checked == false)) {
         genderSpan.innerHTML = "Required";
-        // return false;
     }
 
-    // if (!language) {
-    //     languageSpan.innerHTML = "Required";
-    //     // return false;
-    // }
+    if (gender === '') {
+        genderSpan.innerHTML = "Required";
+    }
 
-    return false; // Prevent form submission
+    for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            isChecked = true;
+            break;
+        }
+    }
+    if (!isChecked) {
+        languageSpan.innerHTML = "Required";
+    }
+
+    return false; // Prevent invalid form submission 
+}
+
+function clearError(e) {
+    document.getElementById(e).innerHTML = '';
 }

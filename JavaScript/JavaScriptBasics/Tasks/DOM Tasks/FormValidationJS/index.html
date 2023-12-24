@@ -13,55 +13,43 @@
         <div class="formBox">
             <form id="myForm" name="myForm" onsubmit="return validateForm()">
                 <h1 style="text-align: center;">Registration Form</h1>
-                User id: <input id="userid" type="text" name="userid">
-                <span id="nameSpan" style="color: red; font-size: small;"></span> <br><br>
-                Password: <input id="password" type="password"> 
-                <span id="passwordSpan" style="color: red; font-size: small;"></span> <br><br>
-                Name: <input id="username" type="text"> 
-                <span id="usernameSpan" style="color: red; font-size: small;"></span> <br><br>
-                Address: <input id="address" type="text" placeholder="optional"> <br><br>
-                Country: <select id="country" name="">
-                    <option disabled selected style="font-size: small;">Select a Country</option>
-                    <option value="India">India</option>
-                    <option value="USA">USA</option>
-                    <option value="UK">UK</option>
-                    <option value="UAE">UAE</option>
-                </select> 
-                <span id="countrySpan" style="color: red; font-size: small;"></span> <br><br>
-                ZIP Code: <input id="zip" type="text">
-                <span id="zipSpan" style="color: red; font-size: small;"></span> <br><br>
-                Email: <input id="emailid" type="email">
-                <span id="emailidSpan" style="color: red; font-size: small;"></span> <br><br>
-                Sex: <input id="female" name="gender" type="radio"> Female
-                <input id="male" name="gender" type="radio"> Male
-                <span id="genderSpan" style="color: red; font-size: small;"></span> <br><br>
-                Language: <input type="checkbox" id="language" name="language"> English
-                <input type="checkbox" id="language" name="language"> Non English 
-                <span id="languageSpan" style="color: red; font-size: small;"></span> <br><br>
-                About: <br> <textarea name="" id="about" cols="30" rows="6" placeholder="Tell us about yourself"></textarea> <br><br>
-                <input id="submitBtn" type="submit" value="Submit" >
+                <div class="formContents">
+                    User id: <input id="userid" type="text" name="userid" onchange="clearError('nameSpan')">
+                    <span id="nameSpan" style="color: red; font-size: small;"></span> <br><br>
+                    Password: <input id="password" type="password" onchange="clearError('passwordSpan')">
+                    <span id="passwordSpan" style="color: red; font-size: small;"></span> <br><br>
+                    Name: <input id="username" type="text" autocomplete="given-name" onchange="clearError('usernameSpan')">
+                    <span id="usernameSpan" style="color: red; font-size: small;"></span> <br><br>
+                    Address: <input id="address" autocomplete="address-level1" type="text" placeholder="optional"> <br><br>
+                    Country: <select id="country" autocomplete="additional-name" name="" onchange="clearError('countrySpan')">
+                        <!-- <option disabled selected style="font-size: small;">Select a Country</option> -->
+                        <option style="font-size: small;">Select a Country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="UAE">UAE</option>
+                    </select>
+                    <span id="countrySpan" style="color: red; font-size: small;"></span> <br><br>
+                    ZIP Code: <input id="zip" type="text" onchange="clearError('zipSpan')">
+                    <span id="zipSpan" style="color: red; font-size: small;"></span> <br><br>
+                    Email: <input id="emailid" type="text" onchange="clearError('emailidSpan')">
+                    <span id="emailidSpan" style="color: red; font-size: small;"></span> <br><br>
+                    Sex: <input id="female" name="gender" type="radio" onchange="clearError('genderSpan')"> Female
+                    <input id="male" name="gender" type="radio" onchange="clearError('genderSpan')"> Male
+                    <span id="genderSpan" style="color: red; font-size: small;"></span> <br><br>
+                    Language: <input type="checkbox" id="language1" name="language"
+                        onchange="clearError('languageSpan')"> English
+                    <input type="checkbox" id="language2" name="language" onchange="clearError('languageSpan')">
+                    Malayalam
+                    <span id="languageSpan" style="color: red; font-size: small;"></span> <br><br>
+                    About: <br> <textarea name="" id="about" cols="30" rows="6"
+                        placeholder="Tell us about yourself"></textarea> <br><br>
+                    <input id="submitBtn" type="submit" value="Submit">
+                </div>
             </form>
         </div>
     </div>
-    
-  
 
     <script src="script.js"></script>
-
 </body>
-
-</html>
-
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Form Submission Without Refresh</title>
-</head>
-
-<body>
- 
-</body>
-
 </html>
