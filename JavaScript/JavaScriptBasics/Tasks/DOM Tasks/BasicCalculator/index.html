@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <p>CALCULATOR</p>
+            <input type="text" id="screen"> <br>
+            <div class="buttons">
+                <div class="column-1">
+                    <input class="button allClear" type="button" value="AC" onclick="allClear()">
+                    <input class="button operator" type="button" value="/" onclick="buttonClick(value)">
+                    <input class="button operator" type="button" value="*" onclick="buttonClick(value)"><br>
+
+                    <input class="button number" type="button" value="7" onclick="buttonClick(value)">
+                    <input class="button number" type="button" value="8" onclick="buttonClick(value)">
+                    <input class="button number" type="button" value="9" onclick="buttonClick(value)"> <br>
+
+                    <input class="button number" type="button" value="4" onclick="buttonClick(value)">
+                    <input class="button number" type="button" value="5" onclick="buttonClick(value)">
+                    <input class="button number" type="button" value="6" onclick="buttonClick(value)"> <br>
+
+                    <input class="button number" type="button" value="1" onclick="buttonClick(value)">
+                    <input class="button number" type="button" value="2" onclick="buttonClick(value)">
+                    <input class="button number" type="button" value="3" onclick="buttonClick(value)"> <br>
+
+                    <input class="button delete" type="button" value="DE" onclick="deleteBtn()">
+                    <input class="button number" type="button" value="0" onclick="buttonClick(value)">
+                    <input class="button number" type="button" value="." onclick="buttonClick(value)">
+                </div>
+                <div class="column-2">
+                    <input class="button operator" type="button" value="-" onclick="buttonClick(value)">
+                    <input class="button button-Plus-equal  operator" type="button" value="+" onclick="buttonClick(value)">
+                    <input class="button button-Plus-equal operator  result" type="button" value="=" onclick="equalBtn()">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
