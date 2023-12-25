@@ -12,7 +12,7 @@
     <div class="container">
         <form action="">
             <p>CALCULATOR</p>
-            <input type="text" id="screen"> <br>
+            <input type="text" id="screen" readonly onkeypress="return onlyAllow(event)"> <br>
             <div class="buttons">
                 <div class="column-1">
                     <input class="button allClear" type="button" value="AC" onclick="allClear()">
