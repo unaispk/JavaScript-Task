@@ -19,15 +19,11 @@ class Area {
     }
 }
 
-let circleArea = new Area();
-circleArea.PI = Math.PI;
-let cubeArea = new Area();
-let triangleArea = new Area();
-let rectangleArea = new Area();
+let objectArea = new Area();
+objectArea.PI = Math.PI;
 
-
-console.log(`Area of circle is ${circleArea.circle(4)}`);
-console.log(`Area of triangle is ${triangleArea.triangle(4,6)}`);
-console.log(`Area of rectangle is ${rectangleArea.rectangle(5,8)}`);
-console.log(`Area of cube is ${cubeArea.cube(5)}`);
+console.log(`Area of circle is ${objectArea.circle(4)}`);
+console.log(`Area of triangle is ${objectArea.triangle(4,6)}`);
+console.log(`Area of rectangle is ${objectArea.rectangle(5,8)}`);
+console.log(`Area of cube is ${objectArea.cube(5)}`);
 

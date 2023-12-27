@@ -20,7 +20,7 @@ class Calculator {
 
 let calc = new Calculator(10,5);
 
-console.log(calc.summation());
-console.log(calc.substraction());
-console.log(calc.multiplication());
-console.log(calc.division());
+console.log(`Sum : ${calc.summation()}`);
+console.log(`Substraction : ${calc.substraction()}`);
+console.log(`Multiplication : ${calc.multiplication()}`);
+console.log(`Division : ${calc.division()}`);
